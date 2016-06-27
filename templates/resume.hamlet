@@ -1,0 +1,71 @@
+<h1> Resume
+  <h2> Overview
+    <p> I’m a web developer with several years of experience building applications with Javascript, CSS3, HTML5, jQuery, SQL, and PHP5. I also work a lot with AngularJS, but am very capable of working with other frameworks if needed. I am very fast and agile — and very capable of meeting deadlines.
+  <h2> Employment History
+  <h3> Software Development Engineer
+  <h4> Chrome River Technologies
+  <h4> August 2015 - Present | Los Angeles, California
+  <ul><li>Develop expense reporting software.
+      <li>Operate in a SCRUM agile team with weekly sprints.
+      <li>Technologies include (but not limited to): BackboneJS, MarionetteJS, RadioJS, BaconJS, Spring
+          framework, Hibernate, Java 7/8, MySQL, MongoDB, SCSS, Jenkins, Vagrant, VirtualBox, Karma, Git.
+  <br>
+  <h3> Associate Web Developer
+  <h4> Internet Brands
+  <h4> August 2013 - July 2015 | El Segundo, CA
+  <h4> Associate Web Developer
+  <h4> January 2015 -- July 2015
+  <h4> Web Developer Intern
+  <h4> August 2013 -- January 2015
+  <ul><li>I develop and maintain Modelmayhem.com, the world's largest professional networking website for models and photographers with over 900,000 active users.
+      <li>Involved in its redesign and the construction of a single page web app in AngularJS.
+      <li>Operate in a SCRUM agile team with two project managers, two other developers, a QA, and a remote outsourced team of five developers that release in 2-3 week sprints.
+      <li>Develop with an in-house built MVC and ORM.
+      <li>Using Jenkins CI for deployment and SVN for version control.
+      <li>Main technologies utilized: LAMP with PostgresSQL and memcached, PHP5, HTML5, CSS3, and AngularJS.
+  <br>
+  <h3> Systems Architect Intern
+  <h4> Kamehameha Schools
+  <h4> September 2010 -- January 2011 | Honolulu, HI
+  <ul><li>Worked on a project that involved remapping the keyboard to support the Hawaiian language for the MS Office 2007 suite (Word, PowerPoint, Excel, and Outlook).
+      <li>Assisted the Technical Architectural Council (TAC) with administrative duties.
+  <br>
+  <h3> Computer Support Specialist
+  <h4> Nagatani Academic Center
+  <h4> October, 2009 -- May, 2010
+  <ul><li>IT and help desk specialist for the athletes of the University of Hawaii at Manoa.
+      <li>Designed, maintained and updated an MS Access database (VB Coding) to keep track of athlete’s grades and attendance.
+  <br>
+  <h3> Research Assistant
+  <h4> Loyola University Chicago
+  <h4> June, 2008 -- June, 2009
+  <ul><li>Developed two Java-based applications for the LUC biology department.
+      <li>Did novel in silico research on the organism P. falciparum (the protist responsible for Malaria) using statistics analysis, C and Perl  scripting over Linux, and MS Excel.
+      <li>Presented my research at the fall 2008 Argonne National Labs Undergraduate Symposium.
+  <h2> Skills
+  <ul><li>Linux
+      <li>Javascript
+      <li>HTML
+      <li>PHP
+      <li>CSS
+      <li>Git
+      <li>Databases
+      <li>Computer Science
+      <li>AngularJS
+      <li>jQuery
+      <li>SQL
+      <li>LAMP
+      <li>Web Development
+      <li>MVC
+      <li>JIRA & Confluence
+      <li>PostgreSQL
+  <h2>Education
+  <h3>Loyola University of Chicago
+  <h4> Bachelor of Science (B.S.), Computer Science
+  <h4> 2009
+  <p> CS Coursework: Quantitative Bioinformatics, Database Programming, Intermediate Obj-Oriented Development, Data Structures, Design and Analysis of Computer Algorithms, Discrete Mathematics
+  <p> Activities and Societies: Deans List
+  <h3>University of Hawaii at Manoa
+  <h4> Graduate School of Information and Comptuer Sciences
+  <p> Took a few graduate courses at the University of Hawaii.
+  <p> Coursework: Programming Language Theory, Logic Design & Microprocessors, Machine Learning
