@@ -24,6 +24,7 @@ library
                      Handler.Home
                      Handler.About
                      Handler.Posts
+                     Handler.Post
                      Handler.Poems
                      Handler.Projects
                      Handler.Resume
