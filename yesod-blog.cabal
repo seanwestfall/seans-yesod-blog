@@ -88,6 +88,8 @@ library
                  , containers
                  , vector
                  , time
+                 , wai
+                 , blaze-markup
 
 executable         yesod-blog
     if flag(library-only)

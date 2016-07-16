@@ -10,6 +10,5 @@
 /poems PoemsR GET
 /projects ProjectsR GET
 /resume ResumeR GET
-
-/template_haskell PostR GET
+/post/#String PostR GET
 

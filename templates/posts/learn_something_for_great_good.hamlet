@@ -1,0 +1,23 @@
+!!!
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Untitled Document.md
+    <style>
+  <body #preview>
+    <h4>
+      <a #Learn_Something_For_Great_Good_0>
+      Learn Something For Great Good
+    <p>
+      This past week at work I’ve just been finishing up the second release for the AngularJs app I’ve been building for Model Mayhem. After this second release, we’ll be done for the most part with the mystuff pages, except for a the photo uploader and album manager. Though, at least with this we’ll finally be in a position to drop some of the old crappy member facing pages (maybe… people still use it for some reason). Beyond that, this release will also contain a new skin for the members forums, which is looking really snappy, and a few new mod related pages. I have some other ideas about what I’d like to add to the forums, but it will probably have to wait with everything else, and if I can get permission from all my managers.
+    <p>
+      I still haven’t finished the Elastic Search node (I think I mentioned earlier), but after showing our database admin my progress, we decided to drop it in favor of a simpler PostgresSQL 9.3 JSON index. I spent about a day experimenting with Postgre Indexing before meeting with our DB manager, and though it’s slower at searching than Elastic Search (20ms-10ms for ES vs 300ms-200ms for Postgres), it’s simpler to implement. It wont require a cron job to update the index, nor will it require any work to maintain Java as a dependency. And so, that is that — no Elastic Search — Elastic Search is meant for another day.
+    <p>
+      At home, I’m still working through CIS 194 — I’m done with the first chapter, but haven’t done the assignments — though they look super easy. Oddly enough, when I got to the second chapter — it was missing (proof: Working with Lists). I’m very glad I’m working through this after finishing Learn you a Haskell, since CIS194 is so much dryer. Though since I’ve been so interested in haskell lately, I’ve also started to investigate actually automated proof writing languages. Lucky for me, I’ve discovered there’s a “Learn You a Haskell” for Agda! called Learn You an Agda and Achieve Enlightenment! written by a Liam O’Connor-Davis and edited a little by William Demeo. This is really awesome, and I feel like though I’ve only gotten started with Haskell, I’m already finding it deficiencies — and that’s why I’d like to start looking into proof generation languages — since that’s what haskell apparently use to be — but no longer is…
+    <p>
+      I’m also currently reading Purely Functional Data Structures by Chris Okasaki, upon the recommendation of quite a few people, which is a short book at only ~230 pages or so with examples written in ML (but Haskell in the appendix), but is in fact a really really hard read (which is good). I’m probably going to have to read it very slowly, while I type the examples into GHCi, to see them run.
+    <p>
+      Beyond the programming and comp sci books I’ve been reading, I’ve also started (yes started again) reading Alan Watt’s The Book. Yes The Book, with the subtitle I’m a little embarrassed to mention: “On the Taboo Against Knowing Who You are”. Yeah, sounds creepy — but it’s actually a pretty damn good read all around . . .
+    <p>
+      So I guess at home I’ve been doing a lot of reading — which is good — goes really well with yoga and tea.

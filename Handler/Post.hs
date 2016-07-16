@@ -1,10 +1,14 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Handler.Post where
 
 import Import
-import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
-                              withSmallInput)
+import Network.Wai           (pathInfo, rawPathInfo, requestMethod, responseLBS)
+import Text.Blaze            (preEscapedText)
 
-getPostR :: Handler Html
-getPostR = do
-    defaultLayout $(widgetFile "posts/template_haskell")
+getPostR :: String -> Handler Html
+getPostR title = do
+    {-req <- waiRequest-}
+    let temp = "templates/posts/" ++ title ++ ".html"
+    snippet <- readFile temp
+    defaultLayout [whamlet|#{preEscapedText snippet}|]
 
