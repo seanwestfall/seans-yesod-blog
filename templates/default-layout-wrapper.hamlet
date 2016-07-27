@@ -20,32 +20,37 @@ $newline never
     \<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     \<![endif]-->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js">
     <script>
       document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
   <body>
-    <div class="container">
-      <header>
-        \<a href="/">Home</a>
-        \<a href="/about">About</a>
-        \<a href="/posts">Posts</a>
-        \<a href="/categories">Categories</a>
-        \<a href="/projects">Projects</a>
-        \<a href="/resume">Resume</a>
-        \<a href="/poems">Poems</a>
-        
+    <div class="parallax">
+      <div class="parallax__layer parallax__layer--back">
+        <header>
+          <div id="header-image" class="header-image">
 
-      <div id="main" role="main">
-        ^{pageBody pc}
-      <footer>
-        #{appCopyright $ appSettings master}
+      <div class="parallax__layer parallax__layer--base">
+        <div class="blog-contents">
+          \<a href="/">Home</a>
+          \<a href="/about">About</a>
+          \<a href="/posts">Posts</a>
+          \<a href="/categories">Categories</a>
+          \<a href="/projects">Projects</a>
+          \<a href="/resume">Resume</a>
+          \<a href="/poems">Poems</a>
 
-    $maybe analytics <- appAnalytics $ appSettings master
-      <script>
-        if(!window.location.href.match(/localhost/)){
-          window._gaq = [['_setAccount','#{analytics}'],['_trackPageview'],['_trackPageLoadTime']];
-          (function() {
-          \  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          \  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          \  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        }
+        <div id="main" role="main">
+          ^{pageBody pc}
+        <footer>
+          #{appCopyright $ appSettings master}
+
+        $maybe analytics <- appAnalytics $ appSettings master
+          <script>
+            if(!window.location.href.match(/localhost/)){
+              window._gaq = [['_setAccount','#{analytics}'],['_trackPageview'],['_trackPageLoadTime']];
+              (function() {
+              \  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              \  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              \  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+            }
