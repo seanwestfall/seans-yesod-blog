@@ -7,4 +7,3 @@ import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
 getPostsR :: Handler Html
 getPostsR = do
     defaultLayout $(widgetFile "posts")
-

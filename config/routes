@@ -5,10 +5,13 @@
 /robots.txt RobotsR GET
 
 / HomeR GET POST
-/about AboutR GET
-/posts PostsR GET
-/poems PoemsR GET
-/projects ProjectsR GET
-/resume ResumeR GET
-/post/#String PostR GET
 
+/comments CommentR POST
+
+/profile ProfileR GET
+/about AboutR GET
+/resume ResumeR GET
+/poems PoemsR GET
+/post/#String PostR GET
+/posts PostsR GET
+/projects ProjectsR GET

@@ -1,3 +1,4 @@
+{-# Language CPP #-}
 -- | Settings are centralized, as much as possible, into this file. This
 -- includes database connection settings, static file locations, etc.
 -- In addition, you can configure a number of different aspects of Yesod
@@ -6,12 +7,12 @@
 module Settings where
 
 import ClassyPrelude.Yesod
-import Control.Exception           (throw)
+import qualified Control.Exception as Exception
 import Data.Aeson                  (Result (..), fromJSON, withObject, (.!=),
                                     (.:?))
 import Data.FileEmbed              (embedFile)
 import Data.Yaml                   (decodeEither')
-import Database.Persist.MongoDB    (MongoConf)
+import Database.Persist.Sqlite     (SqliteConf)
 import Language.Haskell.TH.Syntax  (Exp, Name, Q)
 import Network.Wai.Handler.Warp    (HostPreference)
 import Yesod.Default.Config2       (applyEnvValue, configSettingsYml)
@@ -24,10 +25,11 @@ import Yesod.Default.Util          (WidgetFileSettings, widgetFileNoReload,
 data AppSettings = AppSettings
     { appStaticDir              :: String
     -- ^ Directory from which to serve static files.
-    , appDatabaseConf           :: MongoConf
+    , appDatabaseConf           :: SqliteConf
     -- ^ Configuration settings for accessing the database.
-    , appRoot                   :: Text
-    -- ^ Base for all generated URLs.
+    , appRoot                   :: Maybe Text
+    -- ^ Base for all generated URLs. If @Nothing@, determined
+    -- from the request headers.
     , appHost                   :: HostPreference
     -- ^ Host/interface the server should bind to.
     , appPort                   :: Int
@@ -52,6 +54,9 @@ data AppSettings = AppSettings
     -- ^ Copyright text to appear in the footer of the page
     , appAnalytics              :: Maybe Text
     -- ^ Google Analytics code
+
+    , appAuthDummyLogin         :: Bool
+    -- ^ Indicate if auth dummy login should be enabled.
     }
 
 instance FromJSON AppSettings where
@@ -64,7 +69,7 @@ instance FromJSON AppSettings where
 #endif
         appStaticDir              <- o .: "static-dir"
         appDatabaseConf           <- o .: "database"
-        appRoot                   <- o .: "approot"
+        appRoot                   <- o .:? "approot"
         appHost                   <- fromString <$> o .: "host"
         appPort                   <- o .: "port"
         appIpFromHeader           <- o .: "ip-from-header"
@@ -75,8 +80,10 @@ instance FromJSON AppSettings where
         appMutableStatic          <- o .:? "mutable-static"   .!= defaultDev
         appSkipCombining          <- o .:? "skip-combining"   .!= defaultDev
 
-        appCopyright              <- o .: "copyright"
+        appCopyright              <- o .:  "copyright"
         appAnalytics              <- o .:? "analytics"
+
+        appAuthDummyLogin         <- o .:? "auth-dummy-login"      .!= defaultDev
 
         return AppSettings {..}
 
@@ -108,7 +115,8 @@ configSettingsYmlBS = $(embedFile configSettingsYml)
 
 -- | @config/settings.yml@, parsed to a @Value@.
 configSettingsYmlValue :: Value
-configSettingsYmlValue = either throw id $ decodeEither' configSettingsYmlBS
+configSettingsYmlValue = either Exception.throw id
+                       $ decodeEither' configSettingsYmlBS
 
 -- | A version of @AppSettings@ parsed at compile time from @config/settings.yml@.
 compileTimeAppSettings :: AppSettings

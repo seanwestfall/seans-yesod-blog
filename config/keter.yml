@@ -12,7 +12,11 @@ stanzas:
 
     # Name of your executable. You are unlikely to need to change this.
     # Note that all file paths are relative to the keter.yml file.
-    exec: ../dist/build/yesod-blog/yesod-blog
+    #
+    # The path given is for Stack projects. If you're still using cabal, change
+    # to
+    # exec: ../dist/build/my-project/my-project
+    exec: ../dist/bin/my-project
 
     # Command line options passed to your application.
     args: []
@@ -21,7 +25,7 @@ stanzas:
       # You can specify one or more hostnames for your application to respond
       # to. The primary hostname will be used for generating your application
       # root.
-      - www.yesod-blog.com
+      - www.my-project.com
 
     # Enable to force Keter to redirect to https
     # Can be added to any stanza
@@ -30,7 +34,7 @@ stanzas:
   # Static files.
   - type: static-files
     hosts:
-      - static.yesod-blog.com
+      - static.my-project.com
     root: ../static
 
     # Uncomment to turn on directory listings.
@@ -40,9 +44,9 @@ stanzas:
   - type: redirect
 
     hosts:
-      - yesod-blog.com
+      - my-project.com
     actions:
-      - host: www.yesod-blog.com
+      - host: www.my-project.com
         # secure: false
         # port: 80
 
