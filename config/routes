@@ -12,6 +12,6 @@
 /about AboutR GET
 /resume ResumeR GET
 /poems PoemsR GET
-/post/#String PostR GET
+/post/#Text PostR GET
 /posts PostsR GET
 /projects ProjectsR GET

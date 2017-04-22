@@ -2,7 +2,6 @@
     <div .container>
         <div .row>
             <h1 .header>
-                Just a quick test from SEAN!
                 Yesod—a modern framework for blazing fast websites
             <h2>
                 Fast, stable & spiced with great community

@@ -25,6 +25,9 @@ data App = App
     , appConnPool    :: ConnectionPool -- ^ Database connection pool.
     , appHttpManager :: Manager
     , appLogger      :: Logger
+    , ghc_out        :: Text
+    , uname_out      :: Text
+    , stack_out      :: Text
     }
 
 data MenuItem = MenuItem
@@ -137,14 +140,17 @@ instance Yesod App where
     isAuthorized (AuthR _) _ = return Authorized
     isAuthorized CommentR _ = return Authorized
     isAuthorized HomeR _ = return Authorized
+    isAuthorized FaviconR _ = return Authorized
+    isAuthorized RobotsR _ = return Authorized
+
+    -- blog stuff
     isAuthorized AboutR _ = return Authorized
     isAuthorized PoemsR _ = return Authorized
     isAuthorized ResumeR _ = return Authorized
     isAuthorized (PostR _) _ = return Authorized
     isAuthorized PostsR _ = return Authorized
     isAuthorized ProjectsR _ = return Authorized
-    isAuthorized FaviconR _ = return Authorized
-    isAuthorized RobotsR _ = return Authorized
+
     isAuthorized (StaticR _) _ = return Authorized
 
     isAuthorized ProfileR _ = isAuthenticated
@@ -177,6 +183,9 @@ instance Yesod App where
 
     makeLogger = return . appLogger
 
+    -- Provide proper Bootstrap styling for default displays, like
+    -- error pages
+    defaultMessageWidget title body = $(widgetFile "default-message-widget")
 
 -- Define breadcrumbs.
 instance YesodBreadcrumbs App where

@@ -37,6 +37,10 @@ import Handler.Home
 import Handler.Comment
 import Handler.Profile
 
+import System.IO
+import System.Process
+
+-- Blog Stuff
 import Handler.About
 import Handler.Post
 import Handler.Resume
@@ -62,6 +66,15 @@ makeFoundation appSettings = do
     appStatic <-
         (if appMutableStatic appSettings then staticDevel else static)
         (appStaticDir appSettings)
+
+    (_, Just hout, _, _) <- createProcess (proc "ghc" ["--version"]){ std_out = CreatePipe }
+    ghc_out <- fmap pack $ System.IO.hGetContents hout
+
+    (_, Just hout, _, _) <- createProcess (proc "uname" ["-a"]){ std_out = CreatePipe }
+    uname_out <- fmap pack $ System.IO.hGetContents hout
+
+    (_, Just hout, _, _) <- createProcess (proc "/home/goldfish/.local/bin/stack" ["--version"]){ std_out = CreatePipe }
+    stack_out <- fmap pack $ System.IO.hGetContents hout
 
     -- We need a log function to create a connection pool. We need a connection
     -- pool to create our foundation. And we need our foundation to get a

@@ -62,13 +62,15 @@ library
                                               || >= 4.9.1.0    && < 5
 
                  , yesod                         >= 1.4.3      && < 1.5
-                 , yesod-core                    >= 1.4.17     && < 1.5
+                 , yesod-core                    >= 1.4.30     && < 1.5
                  , yesod-auth                    >= 1.4.0      && < 1.5
                  , yesod-static                  >= 1.4.0.3    && < 1.6
                  , yesod-form                    >= 1.4.0      && < 1.5
                  , classy-prelude                >= 0.10.2
                  , classy-prelude-conduit        >= 0.10.2
-                 , classy-prelude-yesod          >= 0.10.2
+                 -- version 1.0 had a bug in reexporting Handler, causing trouble
+                 , classy-prelude-yesod          >= 0.10.2     && < 1.0
+                                              || >= 1.1
                  , bytestring                    >= 0.9        && < 0.11
                  , text                          >= 0.11       && < 2.0
                  , persistent                    >= 2.0        && < 2.7
@@ -81,7 +83,7 @@ library
                  , wai-extra                     >= 3.0        && < 3.1
                  , yaml                          >= 0.8        && < 0.9
                  , http-conduit                  >= 2.1        && < 2.3
-                 , directory                     >= 1.1        && < 1.3
+                 , directory                     >= 1.1        && < 1.4
                  , warp                          >= 3.0        && < 3.3
                  , data-default
                  , aeson                         >= 0.6        && < 1.1
@@ -97,15 +99,16 @@ library
                  , time
                  , case-insensitive
                  , wai
+                 , process
                  , blaze-markup
 
-executable         my-project
+executable         my-project2
     if flag(library-only)
         Buildable: False
 
     main-is:           main.hs
     hs-source-dirs:    app
-    build-depends:     base, my-project
+    build-depends:     base, my-project2
 
     ghc-options:       -threaded -rtsopts -with-rtsopts=-N
 
@@ -157,7 +160,7 @@ test-suite test
                 CPP
 
     build-depends: base
-                 , my-project
+                 , my-project2
                  , yesod-auth
                  , yesod-test >= 1.5.2 && < 1.6
                  , yesod-core

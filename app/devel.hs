@@ -1,6 +1,7 @@
 {-# LANGUAGE PackageImports #-}
-import "my-project" Application (develMain)
+import "my-project2" Application (develMain)
 import Prelude (IO)
 
 main :: IO ()
-main = develMain
+main = develMain 
+

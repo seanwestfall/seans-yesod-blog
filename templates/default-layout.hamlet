@@ -51,3 +51,9 @@
     <div .container>
         <p .text-muted>
             #{appCopyright $ appSettings master}
+        <div>
+            #{ghc_out master}
+        <div>
+            #{uname_out master}
+        <div>
+            #{stack_out master}
