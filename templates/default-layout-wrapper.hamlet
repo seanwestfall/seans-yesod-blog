@@ -9,8 +9,8 @@ $newline never
     <meta charset="UTF-8">
 
     <title>#{pageTitle pc}
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="The Blog of Sean Westfall">
+    <meta name="author" content="Sean Westfall">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
 

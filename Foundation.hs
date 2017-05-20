@@ -100,27 +100,42 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     }
                 , NavbarLeft $ MenuItem
-                    { menuItemLabel = "Profile"
-                    , menuItemRoute = ProfileR
-                    , menuItemAccessCallback = isJust muser
+                    { menuItemLabel = "About"
+                    , menuItemRoute = AboutR
+                    , menuItemAccessCallback = True
                     }
-                , NavbarRight $ MenuItem
-                    { menuItemLabel = "Login"
-                    , menuItemRoute = AuthR LoginR
-                    , menuItemAccessCallback = isNothing muser
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Posts"
+                    , menuItemRoute = PostsR
+                    , menuItemAccessCallback = True
                     }
-                , NavbarRight $ MenuItem
-                    { menuItemLabel = "Logout"
-                    , menuItemRoute = AuthR LogoutR
-                    , menuItemAccessCallback = isJust muser
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Categories"
+                    , menuItemRoute = HomeR
+                    , menuItemAccessCallback = True
+                    }
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Projects"
+                    , menuItemRoute = ProjectsR
+                    , menuItemAccessCallback = True
+                    }
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Resume"
+                    , menuItemRoute = ResumeR
+                    , menuItemAccessCallback = True
+                    }
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Poems"
+                    , menuItemRoute = PoemsR
+                    , menuItemAccessCallback = True
                     }
                 ]
 
         let navbarLeftMenuItems = [x | NavbarLeft x <- menuItems]
-        let navbarRightMenuItems = [x | NavbarRight x <- menuItems]
+        -- let navbarRightMenuItems = [x | NavbarRight x <- menuItems]
 
         let navbarLeftFilteredMenuItems = [x | x <- navbarLeftMenuItems, menuItemAccessCallback x]
-        let navbarRightFilteredMenuItems = [x | x <- navbarRightMenuItems, menuItemAccessCallback x]
+        -- let navbarRightFilteredMenuItems = [x | x <- navbarRightMenuItems, menuItemAccessCallback x]
 
         -- We break up the default layout into two components:
         -- default-layout is the contents of the body tag, and
