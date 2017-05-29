@@ -15,8 +15,8 @@ stanzas:
     #
     # The path given is for Stack projects. If you're still using cabal, change
     # to
-    # exec: ../dist/build/my-project2/my-project2
-    exec: ../dist/bin/my-project2
+    # exec: ../dist/build/seans-yesod-blog/seans-yesod-blog
+    exec: ../dist/bin/seans-yesod-blog
 
     # Command line options passed to your application.
     args: []
@@ -25,7 +25,7 @@ stanzas:
       # You can specify one or more hostnames for your application to respond
       # to. The primary hostname will be used for generating your application
       # root.
-      - www.my-project2.com
+      - www.seans-yesod-blog.com
 
     # Enable to force Keter to redirect to https
     # Can be added to any stanza
@@ -34,7 +34,7 @@ stanzas:
   # Static files.
   - type: static-files
     hosts:
-      - static.my-project2.com
+      - static.seans-yesod-blog.com
     root: ../static
 
     # Uncomment to turn on directory listings.
@@ -44,9 +44,9 @@ stanzas:
   - type: redirect
 
     hosts:
-      - my-project2.com
+      - seans-yesod-blog.com
     actions:
-      - host: www.my-project2.com
+      - host: www.seans-yesod-blog.com
         # secure: false
         # port: 80
 

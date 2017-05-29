@@ -1,4 +1,4 @@
-name:              my-project
+name:              seans-yesod-blog
 version:           0.0.0
 cabal-version:     >= 1.8
 build-type:        Simple
@@ -102,13 +102,13 @@ library
                  , process
                  , blaze-markup
 
-executable         my-project2
+executable        seans-yesod-blog 
     if flag(library-only)
         Buildable: False
 
     main-is:           main.hs
     hs-source-dirs:    app
-    build-depends:     base, my-project2
+    build-depends:     base, seans-yesod-blog
 
     ghc-options:       -threaded -rtsopts -with-rtsopts=-N
 
@@ -160,7 +160,7 @@ test-suite test
                 CPP
 
     build-depends: base
-                 , my-project2
+                 , seans-yesod-blog
                  , yesod-auth
                  , yesod-test >= 1.5.2 && < 1.6
                  , yesod-core

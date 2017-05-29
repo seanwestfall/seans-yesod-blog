@@ -1,5 +1,5 @@
 {-# LANGUAGE PackageImports #-}
-import "my-project2" Application (develMain)
+import "seans-yesod-blog" Application (develMain)
 import Prelude (IO)
 
 main :: IO ()

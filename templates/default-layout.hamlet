@@ -27,7 +27,9 @@
             #{appCopyright $ appSettings master}
         <div>
             #{ghc_out master}
+            <img src="static/images/haskelllogo.svg"/>
         <div>
             #{uname_out master}
+            <img src="static/images/puflogh1000X248.gif"/>
         <div>
             #{stack_out master}
